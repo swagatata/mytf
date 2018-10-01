@@ -1,6 +1,6 @@
 resource "local_file" "foo" {
     content  = "foo!"
-    filename = "/Users/swagatkonchada/foo.bar"
+    filename = "/usr/foo.bar"
 }
 
 output "region" {
