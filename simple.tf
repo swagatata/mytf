@@ -1,9 +1,20 @@
-variable "content" {}
-resource "local_file" "foo" {
-    content  = "${var.content}"
-    filename = "/Users/swagatkonchada/foo.bar"
+variable "access_key" {}
+variable "secret_key" {}
+variable "region" {
+  default = "ap-southeast-2"
 }
+variable "instance_count" {}
 
+provider "aws" {
+  access_key = "${var.access_key}"
+  secret_key = "${var.secret_key}"
+  region     = "${var.region}"
+}
+resource "aws_instance" "instance" {
+  count         = "${var.instance_count}"
+  ami           = "ami-890b62b3"
+  instance_type = "m3.large"
+}
 output "region" {
-    value = "us-east-1"
+   value = "${var.region}"
 }
