@@ -1,7 +1,7 @@
 variable "content" {}
 resource "local_file" "foo" {
     content  = "${var.content}"
-    filename = "/usr/bin/foo.bar"
+    filename = "/Users/swagatkonchada/foo.bar"
 }
 output "region" {
     value = "us-east-1"
