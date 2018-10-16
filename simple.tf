@@ -13,7 +13,7 @@ provider "aws" {
 resource "aws_instance" "instance" {
   count         = "${var.instance_count}"
   ami           = "ami-890b62b3"
-  instance_type = "m3.large"
+  instance_type = "m3.xlarge"
 }
 output "region" {
    value = "${var.region}"
